@@ -14,7 +14,7 @@ Run DeepSeek Harness (`@deepseek-ai/dsh`) remotely using docker compose, and pro
      - **URL:** `localhost:3080` (or `127.0.0.1:3080`)
 
 2. **Protect with Cloudflare Access (Cloudflare One):**
-   - In [Cloudflare Zero Trust](https://one.dash.cloudflare.com/), go to **Access** > **Applications** > **Add an application** > **Self-hosted**.
+   - In [Cloudflare Dashboard](https://dash.cloudflare.com/), go to **Zero Trust** > **Access Controls** > **Applications** > **Create new application** > **Self-hosted and private**.
    - Set **Application Domain** to `dsh.yourdomain.com`.
    - Add an **Access Policy** (e.g., `Include: Emails` -> `your-email@example.com`).
 
