@@ -1,0 +1,18 @@
+services:
+  deepseek-harness:
+    build: .
+    container_name: deepseek-harness
+    restart: unless-stopped
+    ports:
+      # Bound strictly to host loopback so only the host's cloudflared can proxy it
+      - "127.0.0.1:3080:3080"
+    environment:
+      - DSH_TELEMETRY_DISABLED=1
+      - DSH_TRUSTED_HOST=${DSH_TRUSTED_HOST:-}
+      - DSH_PUBLIC_URL=${DSH_PUBLIC_URL:-}
+    volumes:
+      - dsh-config:/home/node/.dsh
+      - ./workspace:/workspace:rw
+
+volumes:
+  dsh-config:
