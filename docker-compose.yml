@@ -5,6 +5,7 @@ services:
     restart: unless-stopped
     stdin_open: true
     tty: true
+    init: true
     network_mode: host
     environment:
       - DSH_TELEMETRY_DISABLED=1
