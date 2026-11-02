@@ -1,4 +1,4 @@
-FROM node:20-slim
+FROM node:22-slim
 
 # Install standard dependencies, git, curl, and gosu for root-to-user privilege drop
 RUN apt-get update && apt-get install -y --no-install-recommends \

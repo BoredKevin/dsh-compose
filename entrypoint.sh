@@ -47,8 +47,9 @@ if [ -d /home/node/.dsh/logs ]; then
   done
 fi
 
-# Pause 30s before exit to stop 1-second crash loops and allow inspection
-echo "Container pausing 30 seconds before exit..."
-sleep 30
+if [ $EXIT_CODE -ne 0 ]; then
+  echo "Pausing 15 seconds before container exit to prevent rapid restart loops..."
+  sleep 15
+fi
 
 exit $EXIT_CODE
