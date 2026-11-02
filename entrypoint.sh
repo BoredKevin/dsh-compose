@@ -13,4 +13,5 @@ if [ -n "$DSH_PUBLIC_URL" ]; then
   EXTRA_ARGS="$EXTRA_ARGS --public-url $DSH_PUBLIC_URL"
 fi
 
-exec dsh web --host 0.0.0.0 --port 3080 --no-open $EXTRA_ARGS "$@"
+echo "Starting DeepSeek Harness on port 3080..."
+exec dsh web --port 3080 --no-open $EXTRA_ARGS "$@"

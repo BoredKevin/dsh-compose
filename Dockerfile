@@ -10,11 +10,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install DeepSeek Harness globally
 RUN npm install -g @deepseek-ai/dsh
 
+# Pre-create directories and ensure ownership for non-root user
+RUN mkdir -p /home/node/.dsh /workspace && chown -R node:node /home/node /workspace
+
 # Copy entrypoint script and normalize line endings
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN sed -i 's/\r$//' /usr/local/bin/entrypoint.sh && chmod +x /usr/local/bin/entrypoint.sh
 
-# Run as non-root user for security
 USER node
 WORKDIR /workspace
 
