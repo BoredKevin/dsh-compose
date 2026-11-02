@@ -1,2 +1,4 @@
 .env
 workspace/
+workspaces/*
+!workspaces/.gitkeep

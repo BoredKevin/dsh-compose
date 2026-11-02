@@ -13,7 +13,7 @@ services:
       - DSH_PUBLIC_URL=${DSH_PUBLIC_URL:-}
     volumes:
       - dsh-config:/home/node/.dsh
-      - ./workspace:/workspace:rw
+      - ./workspaces:/workspace:rw
 
 volumes:
   dsh-config:

@@ -7,6 +7,7 @@ echo "DSH version: $(dsh -V 2>&1 || echo 'unknown')"
 
 # 1. Automatically fix ownership of persistent mounted volumes
 mkdir -p /home/node/.dsh /workspace
+ln -sfn /workspace /workspaces 2>/dev/null || true
 chown -R node:node /home/node /workspace
 export HOME=/home/node
 export DSH_HOME=/home/node/.dsh
